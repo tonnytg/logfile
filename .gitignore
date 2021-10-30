@@ -1,0 +1,8 @@
+# IDE
+.idea
+
+# LOG
+*.log
+
+# ENV
+*.env
