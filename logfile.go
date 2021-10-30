@@ -8,5 +8,5 @@ func LogFileHelp() {
   }
 
 func LogFileCheck() {
-  fmt.Println("creating logfile local storage")
+    fmt.Println("creating logfile local storage v2")
 }
