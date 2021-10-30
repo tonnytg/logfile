@@ -7,3 +7,6 @@ func LogFileHelp() {
     fmt.Println("Welcome logfile")
   }
 
+func LogFileCheck() {
+  fmt.Println("creating logfile")
+}
