@@ -7,6 +7,7 @@
 - INFO
 - DEBUG
 
+Default this package createa localfile with name `activity.log`
 
 Call the script with the following parameters:
 
