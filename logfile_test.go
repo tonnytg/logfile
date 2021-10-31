@@ -17,8 +17,7 @@ func TestLogging(t *testing.T) {
 	filename := "activity.log"
 
 	// try to read log file
-	file, _ := os.ReadFile(filename)
-	if file == nil {
+	if file, _ := os.ReadFile(filename); file == nil {
 		t.Error("File not found")
 	}
 	// print message like this: 2021/10/31 20:20:37 UTC CRITICAL: Error
