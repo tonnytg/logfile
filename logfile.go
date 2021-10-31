@@ -1,12 +1,23 @@
-package logfile
+package logging
 
-import "fmt"
+import (
+    "fmt"
+    "log"
+    "os"
+)
 
-// LogFileHelp show options about this package
-func LogFileHelp() {
-    fmt.Println("Welcome logfile")
-  }
+// Msg Message Log module for logs.
+// to use this log.Msg("CRITICAL", "cannot create db")
+func Msg(ErrType, Msg string) {
+    file, err := os.OpenFile("activity.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+    if err != nil {
+        fmt.Println("ERROR: problem to open or create file log")
+    }
 
-func LogFileCheck() {
-    fmt.Println("creating logfile local storage v2")
+    // log config
+    log.SetOutput(file)
+    log.SetFlags(log.Ldate | log.Ltime | log.LUTC)
+
+    // log registry
+    log.Printf("UTC %s: %s\n", ErrType, Msg)
 }
