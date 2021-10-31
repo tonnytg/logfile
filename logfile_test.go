@@ -1,4 +1,4 @@
-package logging_test
+package logfile_test
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 )
 
 func TestLogging(t *testing.T) {
-	logging.Msg("CRITICAL", "Error")
+	logfile.Msg("CRITICAL", "Error")
 
 	file, _ := os.ReadFile("activity.log")
 	if file == nil {

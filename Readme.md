@@ -10,4 +10,4 @@
 
 Call the script with the following parameters:
 
-    logging.Msg("CRITICAL", "Error message do you want to log")
+    logfile.Msg("CRITICAL", "Error message do you want to log")
