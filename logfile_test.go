@@ -11,7 +11,8 @@ import (
 )
 
 func TestLogging(t *testing.T) {
-	logfile.Msg("CRITICAL", "Error test logfile")
+	logfile.Msg("CRITICAL", "system stop working")
+	logfile.Msg("WARNING", "timezone is not correct")
 
 	// remember to check if you change name of file
 	filename := "activity.log"
@@ -25,7 +26,10 @@ func TestLogging(t *testing.T) {
 	fmt.Println(string(file))
 
 	// read content and check if it contains the string
-	if !strings.Contains(string(file), "Error test logfile") {
-		t.Error("Error not found in logfile")
+	if !strings.Contains(string(file), "system stop working") {
+		t.Error("system message not found in logfile")
+	}
+	if !strings.Contains(string(file), "timezone is not correct") {
+		t.Error("timezone message error not found in logfile")
 	}
 }
